@@ -1,7 +1,0 @@
-name = "tuindemnizacionlaboral"
-compatibility_date = "2026-07-01"
-pages_build_output_dir = "."
-
-[[send_email]]
-name = "SEB"
-destination_address = "consultas@tuindemnizacionlaboral.com"
