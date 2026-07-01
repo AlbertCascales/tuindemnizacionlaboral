@@ -58,6 +58,8 @@ section{padding:3rem 1.5rem;max-width:1100px;margin:0 auto}
 .btn-primary{background:var(--gold);color:var(--navy-d);padding:0.9rem 1.8rem;border-radius:8px;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;width:100%}
 .btn-primary:hover{background:#dba43a}
 .form-note{font-size:0.78rem;color:var(--gray-4);margin-top:0.75rem;text-align:center}
+.form-ok{display:none;background:#e6f4ec;border:1.5px solid #7bc79a;color:#1a6b40;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.92rem;font-weight:500}
+.form-ok.show{display:block}
 .side-info h3{font-size:1.15rem;margin-bottom:0.6rem}
 .side-info p{color:var(--gray-4);font-size:0.92rem;margin-bottom:1.25rem}
 .info-item{display:flex;gap:0.75rem;margin-bottom:1.25rem}
@@ -99,8 +101,9 @@ footer{background:var(--navy-d);color:#a9b6c0;padding:3rem 1.5rem 1.5rem}
 
 <section>
   <div class="contact-grid">
-    <!-- Formulario gestionado por Formspree (formspree.io), envía a consultas@tuindemnizacionlaboral.com -->
-    <form class="form-box" action="https://formspree.io/f/xjgqayep" method="POST">
+    <!-- Formulario gestionado 100% por Cloudflare: la ruta /api/contacto es un Worker (til-contacto-worker) que envía el correo vía Cloudflare Email Workers -->
+    <div class="form-ok" id="formOk">✓ Hemos recibido tu consulta. Te responderemos lo antes posible, normalmente en 24-48 horas laborables.</div>
+    <form class="form-box" action="/api/contacto" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label for="nombre">Nombre y apellidos *</label>
@@ -132,7 +135,6 @@ footer{background:var(--navy-d);color:#a9b6c0;padding:3rem 1.5rem 1.5rem}
         <label for="mensaje">Cuéntanos qué pasó *</label>
         <textarea id="mensaje" name="mensaje" required placeholder="Fecha aproximada del accidente, lesiones o secuelas, situación actual (de baja, alta, incapacidad)..."></textarea>
       </div>
-      <input type="hidden" name="_subject" value="Nueva consulta desde tuindemnizacionlaboral.com">
       <button type="submit" class="btn-primary">Enviar consulta gratuita →</button>
       <p class="form-note">Al enviar este formulario aceptas nuestra <a href="/privacidad/">política de privacidad</a>. Responderemos únicamente para valorar tu consulta.</p>
     </form>
@@ -202,6 +204,16 @@ footer{background:var(--navy-d);color:#a9b6c0;padding:3rem 1.5rem 1.5rem}
     <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a></span>
   </div>
 </footer>
+
+<script>
+  if (new URLSearchParams(window.location.search).get('enviado') === '1') {
+    var ok = document.getElementById('formOk');
+    if (ok) {
+      ok.classList.add('show');
+      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+</script>
 
 </body>
 </html>
