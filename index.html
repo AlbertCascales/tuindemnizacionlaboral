@@ -93,12 +93,12 @@ section{padding:3.5rem 1.5rem;max-width:1100px;margin:0 auto}
 .section-header p{color:var(--gray-4)}
 .bg-alt{background:var(--gray-1)}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
-.card{background:var(--white);border:1.5px solid var(--gray-2);border-radius:14px;padding:1.75rem 1.5rem;transition:box-shadow .2s,transform .2s}
+.card{display:block;background:var(--white);border:1.5px solid var(--gray-2);border-radius:14px;padding:1.75rem 1.5rem;transition:box-shadow .2s,transform .2s}
 .card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
 .card .icon{font-size:1.8rem;margin-bottom:0.75rem}
 .card h3{font-size:1.15rem;margin-bottom:0.5rem;color:var(--navy-d)}
 .card p{color:var(--gray-4);font-size:0.92rem;margin-bottom:0.85rem}
-.card a.more{font-size:0.85rem;font-weight:700;color:var(--navy)}
+.card .more{font-size:0.85rem;font-weight:700;color:var(--navy)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
 .step{position:relative;padding-top:0.5rem}
 .step .num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.85rem}
@@ -164,42 +164,36 @@ footer{background:var(--navy-d);color:#a9b6c0;padding:3rem 1.5rem 1.5rem}
     <p>Cada accidente laboral es distinto. Analizamos tu situación concreta para reclamar la compensación máxima que la ley te permite.</p>
   </div>
   <div class="card-grid">
-    <div class="card">
+    <a class="card" href="/servicios/accidentes-trabajo/">
       <div class="icon">⚠️</div>
       <h3>Accidentes de trabajo</h3>
       <p>Caídas, golpes, cortes o cualquier lesión sufrida durante tu jornada laboral.</p>
-      <a class="more" href="/servicios/accidentes-trabajo/">Saber más →</a>
-    </div>
-    <div class="card">
+      <span class="more">Saber más →</span></a>
+    <a class="card" href="/servicios/accidentes-in-itinere/">
       <div class="icon">🚗</div>
       <h3>Accidentes in itinere</h3>
       <p>Accidentes ocurridos en el trayecto de ida o vuelta entre tu casa y el trabajo.</p>
-      <a class="more" href="/servicios/accidentes-in-itinere/">Saber más →</a>
-    </div>
-    <div class="card">
+      <span class="more">Saber más →</span></a>
+    <a class="card" href="/servicios/enfermedad-profesional/">
       <div class="icon">🫁</div>
       <h3>Enfermedad profesional</h3>
       <p>Dolencias derivadas de la exposición continuada a riesgos en tu puesto de trabajo.</p>
-      <a class="more" href="/servicios/enfermedad-profesional/">Saber más →</a>
-    </div>
-    <div class="card">
+      <span class="more">Saber más →</span></a>
+    <a class="card" href="/servicios/incapacidad-permanente/">
       <div class="icon">📋</div>
       <h3>Incapacidad permanente</h3>
       <p>Secuelas que reducen o anulan tu capacidad para trabajar tras el accidente.</p>
-      <a class="more" href="/servicios/incapacidad-permanente/">Saber más →</a>
-    </div>
-    <div class="card">
+      <span class="more">Saber más →</span></a>
+    <a class="card" href="/servicios/gran-invalidez/">
       <div class="icon">🦽</div>
       <h3>Gran invalidez</h3>
       <p>Casos que requieren la asistencia de otra persona para las actividades básicas.</p>
-      <a class="more" href="/servicios/gran-invalidez/">Saber más →</a>
-    </div>
-    <div class="card">
+      <span class="more">Saber más →</span></a>
+    <a class="card" href="/servicios/fallecimiento-accidente-laboral/">
       <div class="icon">🕊️</div>
       <h3>Fallecimiento laboral</h3>
       <p>Indemnización para los familiares en caso de accidente de trabajo mortal.</p>
-      <a class="more" href="/servicios/fallecimiento-accidente-laboral/">Saber más →</a>
-    </div>
+      <span class="more">Saber más →</span></a>
   </div>
 </section>
 
