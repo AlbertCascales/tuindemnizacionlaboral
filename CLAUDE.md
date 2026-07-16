@@ -50,3 +50,13 @@ Las imágenes de LinkedIn (`img/linkedin/`) son ilustraciones temáticas por tem
 Es una web de servicios jurídicos reales de cara al público. El contenido legal (plazos, cuantías,
 porcentajes de indemnización) debe verificarse antes de publicarse; un dato mal puesto aquí es un
 problema, no una errata.
+
+## Mantenimiento de este fichero
+
+Si un cambio contradice algo que este fichero afirma (rutas, flujo de despliegue, scripts, secretos,
+decisiones con historia), **actualízalo en el mismo commit que el cambio**. Un CLAUDE.md
+desactualizado es peor que no tenerlo: se cree sin verificar y lleva a actuar sobre supuestos falsos.
+
+**No es un changelog.** No se anota aquí el contenido añadido ni el trabajo de cada sesión: solo lo
+estructural, lo que no se deduce leyendo el código, y lo que costó descubrir una vez y no debería
+costar dos. Si supera las ~120 líneas, recortar lo que ya sea evidente desde el propio código.
