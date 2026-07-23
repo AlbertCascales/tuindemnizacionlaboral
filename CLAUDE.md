@@ -103,6 +103,16 @@ Es el eje del proyecto: schema `BreadcrumbList` / `Article` / `Service` / `FAQPa
 no borrar ninguno de los dos). Dado de alta en Google Search Console **y** Bing Webmaster Tools.
 Al publicar contenido nuevo: actualizar `sitemap.xml` y avisar a IndexNow (`api.indexnow.org`).
 
+Las páginas legales (`/aviso-legal/`, `/privacidad/`, `/cookies/`) llevan `noindex` **y por eso
+NO van en el sitemap** — anunciar en el sitemap algo que luego marcas `noindex` son señales
+contradictorias que malgastan rastreo. No las vuelvas a meter.
+
+**Informe de Search Console:** `tools/gsc-report.js` (solo lectura, Node sin dependencias). Da
+rendimiento (keywords/páginas) e indexación URL por URL del sitemap. La propiedad de GSC es por
+**prefijo de URL** (`https://tuindemnizacionlaboral.com/`), no `sc-domain:`. La clave de la cuenta de
+servicio vive fuera del repo en `C:\Users\marti\.tuindemnizacionlaboral-secrets\gsc-service-account.json`.
+Uso: `node tools/gsc-report.js` (todo) · `--perf` (rápido) · `--index` (~35 llamadas, lento).
+
 ## Convenciones
 
 - Commits en español, en imperativo.
