@@ -56,10 +56,17 @@ Cloudflare Email Workers. Al volver, redirige a `/contacto/?enviado=1` y un scri
 
 `til-linkedin-poster`: cron diario `0 9 * * *` que publica **un** artículo de `/guias/` por ejecución
 (los ya publicados se marcan en el KV `LINKEDIN_KV`, id `04111e1bd0104d8ca24c21ec1a5a5537`, clave
-`posted:<url>`). Endpoints: `/api/linkedin/authorize`, `/callback`, `/status`, `/test-post`, `/run-now`.
+`posted:<url>`). Endpoints: `/api/linkedin/authorize`, `/callback`, `/status`, `/test-post`, `/run-now`,
+`/test-alert`.
 
 - **El token de LinkedIn caduca a los ~60 días y no hay refresh token.** Cuando expire hay que volver a
   visitar `/api/linkedin/authorize` a mano. Comprobar días restantes en `/api/linkedin/status`.
+- **Aviso automático por correo:** el cron diario, además de publicar, comprueba `expires_at` y cuando
+  quedan ≤10 días envía un email a `martinez9alberto7@gmail.com` (binding `[[send_email]]` `ALERT_EMAIL`,
+  mismo patrón que `til-contacto-worker`; remitente `formulario@tuindemnizacionlaboral.com`). Deduplica
+  por fecha con la clave KV `alerted_on`. `/api/linkedin/test-alert` fuerza el envío para probar la
+  entrega sin tocar `alerted_on`. (Se probó una rutina de claude.ai para esto y se descartó: el conector
+  de Gmail solo crea borradores, no envía, y no es de cuenta sino de sesión.)
 - Solo publica en el **perfil personal**. La página de empresa exigiría el producto "Community Management
   API" (revisión manual de LinkedIn); se descartó por fricción.
 - `/run-now` devuelve "OK: ejecutado" **aunque falle por dentro** (los errores solo se loguean).
