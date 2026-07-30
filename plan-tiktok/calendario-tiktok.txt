@@ -1,0 +1,194 @@
+╔══════════════════════════════════════════════════════════════════╗
+║   CALENDARIO TIKTOK · Tu Indemnización Laboral                     ║
+║   1 vídeo cada 3 días · 21 vídeos · del 01/08/2026 al 30/09/2026   ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Cómo usar este fichero:
+- Cada bloque es un vídeo, en orden de publicación (se front-cargan los temas de mayor
+  intención de cliente: despido con calculadora y los casos personales de gancho fuerte).
+- Copia el texto entre las líneas «COPIAR ▼» y «▲» y pégalo tal cual en el caption
+  de TikTok (ya incluye los hashtags).
+- El link va en la BIO (tuindemnizacionlaboral.com); TikTok no deja links clicables en el vídeo.
+- El vídeo se genera desde su guía con:  node tools/scaffold-video.js <slug>
+- La cuenta CAPTA LEADS: el CTA es "consulta gratuita", no "guía gratis". En despido, se
+  menciona la calculadora de indemnización.
+- OJO (web jurídica real): nada de cuantías/plazos inventados en pantalla ni en el caption.
+
+BIO DE LA CUENTA (fíjala una vez):
+────────────────────────────────────────
+⚖️ Tus derechos tras un accidente laboral o un despido
+Te decimos claro qué puedes reclamar
+📩 Primera consulta GRATIS 👇
+tuindemnizacionlaboral.com
+────────────────────────────────────────
+
+
+════════════════════════════════════════════════════════════════════
+VÍDEO 1 · 01/08/2026 · despido-sin-carta-ni-explicacion-que-hacer
+Landing: tuindemnizacionlaboral.com/guias/despido-sin-carta-ni-explicacion-que-hacer/
+COPIAR ▼
+¿Te han despedido de palabra, por WhatsApp o dejando de contar contigo, sin carta? Aunque no lo parezca, casi siempre juega a TU favor: suele ser despido improcedente. Pero el reloj corre desde ya. Te digo qué hacer. Consulta gratis en la bio 👇
+
+#derecholaboral #despido #despidoimprocedente #trabajo #conocetusderechos #abogadolaboralista #indemnizacion #España #empleo #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 2 · 04/08/2026 · finiquito-vs-indemnizacion-no-es-lo-mismo
+Landing: tuindemnizacionlaboral.com/guias/finiquito-vs-indemnizacion-no-es-lo-mismo/
+COPIAR ▼
+Finiquito NO es lo mismo que indemnización, y confundirlos te puede costar dinero 💸 El finiquito se cobra siempre; la indemnización solo en ciertos despidos. Antes de firmar nada, mira esto. Consulta gratis en la bio 👇
+
+#derecholaboral #finiquito #despido #indemnizacion #nofirmes #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 3 · 07/08/2026 · me-presionan-firmar-baja-voluntaria-que-hacer
+Landing: tuindemnizacionlaboral.com/guias/me-presionan-firmar-baja-voluntaria-que-hacer/
+COPIAR ▼
+"Fírmame la baja voluntaria" 🚩 Si la empresa quiere que TÚ firmes tu salida, cuidado: pierdes la indemnización Y el paro. Le sale gratis a su costa. Te digo qué hacer y qué NO firmar. Consulta gratis en la bio 👇
+
+#derecholaboral #bajavoluntaria #despido #nofirmes #paro #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 4 · 10/08/2026 · calculo-indemnizacion-despido-20-o-33-dias
+Landing: tuindemnizacionlaboral.com/guias/calculo-indemnizacion-despido-20-o-33-dias/
+COPIAR ▼
+¿20 o 33 días por año? La diferencia en tu indemnización por despido es enorme, y mucha gente cobra de menos sin saberlo. Te explico la fórmula y cómo calcularla. Calculadora y consulta gratis en la bio 👇
+
+#derecholaboral #despido #indemnizacion #calculadora #conocetusderechos #abogadolaboralista #trabajo #empleo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 5 · 13/08/2026 · empresa-presiona-firmar-accidente-no-fue-su-culpa
+Landing: tuindemnizacionlaboral.com/guias/empresa-presiona-firmar-accidente-no-fue-su-culpa/
+COPIAR ▼
+Tras un accidente laboral, la empresa te pone un papel para firmar "que fue culpa tuya" 🚩 NO lo firmes sin leer esto: es justo lo que puede dejarte sin indemnización. Te digo qué documentos vigilar. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #nofirmes #indemnizacion #prevencion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 6 · 16/08/2026 · despido-improcedente-vs-nulo-diferencias
+Landing: tuindemnizacionlaboral.com/guias/despido-improcedente-vs-nulo-diferencias/
+COPIAR ▼
+Despido improcedente o NULO: no es lo mismo, y la diferencia es cobrar una indemnización… o recuperar tu puesto con todos los salarios pagados. Te explico cuándo es cada uno. Consulta gratis en la bio 👇
+
+#derecholaboral #despido #despidonulo #despidoimprocedente #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 7 · 19/08/2026 · que-hacer-tras-accidente-laboral
+Landing: tuindemnizacionlaboral.com/guias/que-hacer-tras-accidente-laboral/
+COPIAR ▼
+Acabas de tener un accidente en el trabajo: lo que hagas en las primeras horas decide tu indemnización 🩹 Te doy los 5 pasos clave (y el error que casi todos cometen). Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #prevencion #baja #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 8 · 22/08/2026 · acoso-laboral-mobbing-como-demostrarlo-que-reclamar
+Landing: tuindemnizacionlaboral.com/guias/acoso-laboral-mobbing-como-demostrarlo-que-reclamar/
+COPIAR ▼
+El acoso laboral (mobbing) es difícil de demostrar… pero no imposible si sabes qué guardar desde el primer día 📩 Te digo cómo reunir pruebas y qué puedes reclamar (incluida la salida con indemnización). Consulta gratis y confidencial en la bio 👇
+
+#derecholaboral #acosolaboral #mobbing #trabajo #conocetusderechos #abogadolaboralista #saludlaboral #indemnizacion #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 9 · 25/08/2026 · accidente-trafico-camino-trabajo-doble-indemnizacion
+Landing: tuindemnizacionlaboral.com/guias/accidente-trafico-camino-trabajo-doble-indemnizacion/
+COPIAR ▼
+¿Accidente de tráfico yendo o volviendo del trabajo? Puede ser accidente laboral (in itinere) Y accidente de tráfico a la vez: DOS indemnizaciones compatibles 🚗 Te explico cómo. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #initinere #accidentedetrafico #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 10 · 28/08/2026 · despido-objetivo-causas-indemnizacion
+Landing: tuindemnizacionlaboral.com/guias/despido-objetivo-causas-indemnizacion/
+COPIAR ▼
+Te despiden "por causas objetivas" (económicas, técnicas, organizativas) 📉 Que la empresa lo llame así no significa que sea válido: si no cumple los requisitos, puedes reclamar MÁS. Te lo explico. Consulta gratis en la bio 👇
+
+#derecholaboral #despido #despidoobjetivo #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #empleo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 11 · 31/08/2026 · secuelas-accidente-laboral-incapacidad-permanente
+Landing: tuindemnizacionlaboral.com/guias/secuelas-accidente-laboral-incapacidad-permanente/
+COPIAR ▼
+Te dieron el alta pero las secuelas del accidente se quedaron 🦾 "Ya no hay nada que hacer" es MENTIRA: podrías tener derecho a una incapacidad permanente aunque el alta fuera hace tiempo. Te doy las señales. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #incapacidadpermanente #secuelas #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 12 · 03/09/2026 · plazos-reclamar-indemnizacion-accidente-laboral
+Landing: tuindemnizacionlaboral.com/guias/plazos-reclamar-indemnizacion-accidente-laboral/
+COPIAR ▼
+El error que hace perder indemnizaciones enteras: no reclamar a tiempo ⏳ Los plazos por accidente laboral son cortos y, una vez pasan, el derecho se pierde para siempre. Te digo qué vigilar. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #plazos #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #prescripcion #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 13 · 06/09/2026 · despido-disciplinario-que-es-cuando-es-improcedente
+Landing: tuindemnizacionlaboral.com/guias/despido-disciplinario-que-es-cuando-es-improcedente/
+COPIAR ▼
+Te despiden "por motivos disciplinarios" y sin indemnización 😠 Pero la empresa tiene que PROBARLO, y muchas veces no puede: entonces es improcedente y sí cobras. Te explico cuándo puedes reclamar. Consulta gratis en la bio 👇
+
+#derecholaboral #despido #despidodisciplinario #despidoimprocedente #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 14 · 09/09/2026 · caida-suelo-mojado-sin-senalizar
+Landing: tuindemnizacionlaboral.com/guias/caida-suelo-mojado-sin-senalizar/
+COPIAR ▼
+Te caíste en el trabajo por un suelo mojado sin señalizar 💧 Si nadie avisó del riesgo, la empresa puede tener responsabilidad clara, y tú, algo más que la baja. Te digo qué puedes reclamar. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #prevencion #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #seguridadlaboral #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 15 · 12/09/2026 · recargo-de-prestaciones
+Landing: tuindemnizacionlaboral.com/guias/recargo-de-prestaciones/
+COPIAR ▼
+Si tu accidente laboral pasó porque faltaba seguridad, existe algo que muchos no conocen: el recargo de prestaciones. Lo paga la empresa, de su bolsillo, ENCIMA de lo demás. Te lo explico. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #recargodeprestaciones #prevencion #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 16 · 15/09/2026 · baja-medica-accidente-laboral-derechos
+Landing: tuindemnizacionlaboral.com/guias/baja-medica-accidente-laboral-derechos/
+COPIAR ▼
+De baja por accidente laboral: ¿sabes cuánto se cobra y qué pasa si la empresa te presiona para volver antes? 🩺 Tienes más derechos de los que crees. Te los cuento. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #bajamedica #incapacidadtemporal #conocetusderechos #abogadolaboralista #trabajo #saludlaboral #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 17 · 18/09/2026 · despido-colectivo-ere-derechos-trabajador
+Landing: tuindemnizacionlaboral.com/guias/despido-colectivo-ere-derechos-trabajador/
+COPIAR ▼
+Te afecta un ERE (despido colectivo) 🏭 Que haya acuerdo con el comité NO significa que no puedas impugnar tu despido. Te digo qué debe garantizarte el procedimiento y qué puedes reclamar. Consulta gratis en la bio 👇
+
+#derecholaboral #ERE #despidocolectivo #despido #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 18 · 21/09/2026 · lesion-espalda-carga-peso-sin-formacion
+Landing: tuindemnizacionlaboral.com/guias/lesion-espalda-carga-peso-sin-formacion/
+COPIAR ▼
+Te lesionaste la espalda cargando peso en el trabajo, sin formación ni medios 🏋️ Si la empresa no cumplió su obligación de prevención, esto puede ser más que una baja. Te digo qué reclamar. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #sobreesfuerzo #prevencion #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 19 · 24/09/2026 · incapacidad-temporal-vs-permanente
+Landing: tuindemnizacionlaboral.com/guias/incapacidad-temporal-vs-permanente/
+COPIAR ▼
+Incapacidad temporal vs. permanente: no es lo mismo, y confundirlas puede hacerte perder derechos 🩹 Te explico la diferencia y cuándo se pasa de una a otra. Consulta gratis en la bio 👇
+
+#derecholaboral #incapacidadpermanente #incapacidadtemporal #accidentelaboral #conocetusderechos #abogadolaboralista #trabajo #España #laboral #baja
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 20 · 27/09/2026 · accidente-maquina-sin-protecciones
+Landing: tuindemnizacionlaboral.com/guias/accidente-maquina-sin-protecciones/
+COPIAR ▼
+Accidente con una máquina que no tenía las protecciones obligatorias ⚙️ Resguardos retirados, sin parada de emergencia, sin marcado CE… Eso cambia por completo lo que puedes reclamar. Te lo explico. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #seguridadlaboral #prevencion #indemnizacion #conocetusderechos #abogadolaboralista #trabajo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════
+VÍDEO 21 · 30/09/2026 · como-se-calcula-indemnizacion-accidente-laboral
+Landing: tuindemnizacionlaboral.com/guias/como-se-calcula-indemnizacion-accidente-laboral/
+COPIAR ▼
+¿De qué depende la indemnización por un accidente laboral? Secuelas, edad, salario y, sobre todo, la responsabilidad de la empresa 📊 Te explico los factores que la disparan o la hunden. Consulta gratis en la bio 👇
+
+#derecholaboral #accidentelaboral #indemnizacion #secuelas #conocetusderechos #abogadolaboralista #trabajo #empleo #España #laboral
+▲
+════════════════════════════════════════════════════════════════════

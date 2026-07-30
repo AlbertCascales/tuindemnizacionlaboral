@@ -81,6 +81,29 @@ Cloudflare Email Workers. Al volver, redirige a `/contacto/?enviado=1` y un scri
 - LinkedIn **no permite editar la imagen de un post ya publicado**: hay que borrarlo y republicar
   (borrando antes su clave `posted:` del KV).
 
+## TikTok (automatización de vídeos)
+
+Réplica del montaje de EmpiezaPadel/EmpiezaLibros para **captar leads** publicando en TikTok un vídeo
+vertical por guía, **1 cada 3 días**. Vídeos *listicle/explainer* faceless generados con HyperFrames
+(HTML/CSS→MP4, Chrome headless + FFmpeg, gratis, sin GPU); voz HeyGen "Narrator Mateo"
+`0077225a877e457db4572ccaf245910b` `--speed 1.12`. Publicar en TikTok es **manual** (no hay API gratis).
+
+- **`tools/scaffold-video.js <slug>`** convierte una guía en un proyecto de vídeo en `videos/<slug>/`
+  (borrador de storyboard+guion+estética). A diferencia del hermano de empiezalibros, aquí **lee las
+  guías de `guias/<slug>/index.html`** (no de un `index.html` central) y se invoca **por slug**. Saca
+  los puntos de las listas `<ul>/<ol>` (≥3 ítems) o de las secciones `<h2>`, **excluyendo** la sección
+  de venta ("Así te lo resolvemos nosotros"). `--list` lista las guías.
+- **CTA de captación** (no "guía gratis"): consulta gratuita en `tuindemnizacionlaboral.com`; en guías
+  de despido, la variante menciona la calculadora. **Nunca poner cuantías/plazos inventados en pantalla.**
+- Activos de marca en **`tools/video-assets/`** (`frame.md` + `caption-skin.html`, preset blockframe
+  recoloreado a navy `#0f2a43`/dorado `#c9932c`, Playfair Display + Inter) — se versionan. `PLAN-tiktok.md`
+  ahí mismo tiene la estrategia. **`videos/` está en `.gitignore`** (proyectos grandes).
+- Calendario máquina en **`plan-tiktok/calendario-tiktok.txt`** (nº, fecha, slug, landing, caption+
+  hashtags) + estado en `plan-tiktok/generados.txt`. Arranque 01/08/2026.
+- Rutina **`til-tiktok-video`** (12:00 diario; offset del 10:00 de los sitios hermanos) genera el vídeo
+  que toque y para en los días intermedios. Solo produce el MP4 en `videos/`; **no** sube a TikTok ni
+  hace commit/push.
+
 ## Estructura
 
 Sitio estático escrito a mano — **no hay generador de páginas** (a diferencia de los otros dos
