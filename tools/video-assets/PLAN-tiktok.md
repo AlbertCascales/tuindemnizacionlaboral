@@ -56,8 +56,14 @@ republicar idéntico) y sumar guías nuevas según crezca el catálogo.
 ## Notas
 
 - **Sin coste de generación**: HyperFrames renderiza HTML→MP4 con Chrome headless + FFmpeg. Voz y
-  música vía sesión HeyGen (OAuth en `~/.heygen/`, caduca ~08-ago-2026; renovar con
-  `npx hyperframes auth login`). Voz ES: "Narrator Mateo" `0077225a877e457db4572ccaf245910b`, `--speed 1.12`.
+  música vía sesión HeyGen (OAuth en `~/.heygen/`). Voz ES: "Narrator Mateo"
+  `0077225a877e457db4572ccaf245910b`, `--speed 1.12`.
+- **Renovación de la sesión HeyGen**: hay `refresh_token`, así que se renueva **sin navegador** con
+  `npx hyperframes auth refresh` (no interactivo). La rutina `til-tiktok-video` lo ejecuta best-effort
+  antes de cada uso, de modo que el token se auto-renueva. Solo si el refresh falla de forma persistente
+  hasta caducar hace falta el login interactivo `npx hyperframes auth login` (ese sí lo hace Alberto a
+  mano; no se puede automatizar). Ojo: el endpoint de refresh de HeyGen a veces devuelve un 500
+  transitorio (code 40099) — se ignora, no es fallo de credencial.
 - **Guion sin frases cortadas a punto**: Mateo mete pausas largas en cada punto y seguido; escribir las
   líneas de voz unidas con comas/`;`.
 - `videos/` está en `.gitignore` (proyectos grandes). Los activos de marca (`frame.md`,
