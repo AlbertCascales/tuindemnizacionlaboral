@@ -60,6 +60,8 @@ section{padding:3rem 1.5rem;max-width:1100px;margin:0 auto}
 .form-note{font-size:0.78rem;color:var(--gray-4);margin-top:0.75rem;text-align:center}
 .form-ok{display:none;background:#e6f4ec;border:1.5px solid #7bc79a;color:#1a6b40;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.92rem;font-weight:500}
 .form-ok.show{display:block}
+/* Campo trampa anti-spam (honeypot): invisible para personas, tentador para bots. No usar display:none (algunos bots lo detectan). */
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 .side-info h3{font-size:1.15rem;margin-bottom:0.6rem}
 .side-info p{color:var(--gray-4);font-size:0.92rem;margin-bottom:1.25rem}
 .info-item{display:flex;gap:0.75rem;margin-bottom:1.25rem}
@@ -104,6 +106,13 @@ footer{background:var(--navy-d);color:#a9b6c0;padding:3rem 1.5rem 1.5rem}
     <!-- Formulario gestionado 100% por Cloudflare: la ruta /api/contacto es un Worker (til-contacto-worker) que envía el correo vía Cloudflare Email Workers -->
     <div class="form-ok" id="formOk">✓ Hemos recibido tu consulta. Te responderemos lo antes posible, normalmente en 24-48 horas laborables.</div>
     <form class="form-box" action="/api/contacto" method="POST">
+      <!-- Honeypot: si esto se rellena, es un bot. Las personas no lo ven. -->
+      <div class="hp" aria-hidden="true">
+        <label for="empresa">No rellenes este campo</label>
+        <input type="text" id="empresa" name="empresa" tabindex="-1" autocomplete="off">
+      </div>
+      <!-- Marca de tiempo de carga: el Worker descarta envíos hechos en menos de 3 s. -->
+      <input type="hidden" name="cargado_en" id="cargado_en">
       <div class="form-row">
         <div class="form-group">
           <label for="nombre">Nombre y apellidos *</label>
@@ -135,6 +144,14 @@ footer{background:var(--navy-d);color:#a9b6c0;padding:3rem 1.5rem 1.5rem}
         <label for="mensaje">Cuéntanos qué pasó *</label>
         <textarea id="mensaje" name="mensaje" required placeholder="Fecha aproximada del accidente, lesiones o secuelas, situación actual (de baja, alta, incapacidad)..."></textarea>
       </div>
+      <!--
+        CLOUDFLARE TURNSTILE (captcha invisible) — desactivado hasta que existan las claves.
+        Para activarlo: (1) crea un widget en el panel de Cloudflare › Turnstile,
+        (2) pega aquí debajo tu clave de sitio, (3) descomenta este bloque y el <script> del final,
+        (4) guarda el "Secret key" en el Worker con:  npx wrangler secret put TURNSTILE_SECRET
+        El Worker ya valida el token automáticamente en cuanto ese secreto existe.
+        <div class="cf-turnstile" data-sitekey="TU_CLAVE_DE_SITIO" style="margin-bottom:1.1rem"></div>
+      -->
       <button type="submit" class="btn-primary">Enviar consulta gratuita →</button>
       <p class="form-note">Al enviar este formulario aceptas nuestra <a href="/privacidad/">política de privacidad</a>. Responderemos únicamente para valorar tu consulta.</p>
     </form>
@@ -205,6 +222,14 @@ footer{background:var(--navy-d);color:#a9b6c0;padding:3rem 1.5rem 1.5rem}
   </div>
 </footer>
 
+<!-- Para activar Turnstile, descomenta también esta línea:
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+-->
+<script>
+  // Marca cuándo se cargó la página; el Worker rechaza envíos casi instantáneos (bots).
+  var cargado = document.getElementById('cargado_en');
+  if (cargado) cargado.value = Date.now();
+</script>
 <script>
   if (new URLSearchParams(window.location.search).get('enviado') === '1') {
     var ok = document.getElementById('formOk');

@@ -52,6 +52,14 @@ Cloudflare Email Workers. Al volver, redirige a `/contacto/?enviado=1` y un scri
    Por eso el destino real es `martinez9alberto7@gmail.com` (verificado automáticamente por ser el email
    de la cuenta de Cloudflare) y Alberto reenvía desde Gmail a consultas@.
 
+**Anti-spam (varias capas, todas en `til-contacto-worker`):** honeypot (campo oculto `empresa`),
+trampa de tiempo (campo `cargado_en`; se descartan envíos < 3 s), comprobación de `Origin`/`Referer`
+del propio dominio, y filtro de contenido (email válido, mensaje ≥ 15 caracteres, < 3 enlaces). El spam
+detectado recibe una **redirección de falso éxito** (no un error) para no enseñar al bot qué filtro lo
+pilló. **Cloudflare Turnstile** está cableado pero inactivo: el Worker solo exige el token si existe el
+secreto `TURNSTILE_SECRET` (`npx wrangler secret put TURNSTILE_SECRET`); en `/contacto/` hay que crear
+el widget en el panel, pegar la clave de sitio y descomentar el bloque `cf-turnstile` + su `<script>`.
+
 ## LinkedIn (automatización)
 
 `til-linkedin-poster`: cron diario `0 9 * * *` que publica **un** artículo de `/guias/` por ejecución
