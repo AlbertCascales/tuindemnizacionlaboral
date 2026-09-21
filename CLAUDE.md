@@ -13,10 +13,15 @@ Repo: `https://github.com/AlbertCascales/tuindemnizacionlaboral.git` · Hosting:
 desde el dashboard, sí funcionan). Hacer push no publica nada. Para desplegar, desde la raíz del repo:
 
 ```
-npx wrangler pages deploy . --project-name=tuindemnizacionlaboral --commit-dirty=true
+node tools/deploy.js
 ```
 
-Es un direct upload y esquiva también el problema del token de abajo. Tras desplegar, el edge tarda
+Es un direct upload (envuelve `wrangler pages deploy`) y esquiva también el problema del token de abajo.
+**No uses `wrangler pages deploy .` a mano desde la raíz:** publicaría también `videos/` (300+ MB),
+`tools/`, `plan-tiktok/` y este `CLAUDE.md` (con IDs de cuenta y notas internas). `tools/deploy.js`
+copia a un directorio temporal solo lo que es sitio (excluye `videos`, `tools`, `plan-tiktok`,
+`CLAUDE.md`, `node_modules` y todo lo que empieza por `.`) y despliega esa copia. Si creas otra carpeta
+interna en la raíz, añádela a `INTERNAL` en ese script. Tras desplegar, el edge tarda
 ~10-15 s en servir lo nuevo: un 404 inmediato no significa que haya fallado.
 
 **Token de Cloudflare:** el OAuth cacheado de wrangler rota a veces a un formato `cfoat_...` que la API
