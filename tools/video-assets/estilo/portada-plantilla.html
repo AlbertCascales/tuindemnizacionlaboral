@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  Plantilla de PORTADA (1080×1920) en el mismo estilo que los vídeos: documento 3D en despacho de
+  noche. El scaffolder la copia al proyecto como cover.html. Rellena las zonas EDITAR con el gancho
+  del Frame 1 y un dato LITERAL de la guía (nunca cuantías/plazos inventados). Contenido dentro del
+  83% superior (≤ 1594px). Rasterizar con chrome --headless --screenshot.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face { font-family: 'Playfair Display'; src: url("assets/fonts/PlayfairDisplay-Variable.woff2") format('woff2'); font-weight: 400 900; }
+  @font-face { font-family: 'Inter'; src: url("assets/fonts/Inter-Variable.woff2") format('woff2'); font-weight: 100 900; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #050d16; }
+  body { position: relative; font-family: 'Inter', sans-serif; color: #f4f7f9; font-variant-numeric: lining-nums; }
+  .l { position: absolute; inset: 0; }
+  .bg { background: radial-gradient(ellipse 80% 55% at 50% 38%, #163a5c 0%, #0a1e33 55%, #050d16 100%); }
+  .blinds { background: repeating-linear-gradient(180deg, rgba(255,230,180,0.06) 0 38px, transparent 38px 76px); transform: skewY(-8deg); }
+  .glow { position: absolute; left: 50%; top: 640px; width: 1300px; height: 1300px; margin: -650px 0 0 -650px; border-radius: 50%; background: radial-gradient(circle, rgba(201,147,44,0.3), transparent 60%); }
+  .vig { background: radial-gradient(ellipse at 50% 45%, transparent 45%, rgba(0,0,0,0.78) 100%); }
+  .pill { position: absolute; top: 120px; left: 50%; transform: translateX(-50%); padding: 14px 36px; border: 3px solid #f4f7f9; border-radius: 999px; background: rgba(5,13,22,0.6);
+          font-weight: 700; font-size: 32px; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
+  .pill b { color: #e8b95a; }
+  .stage { position: absolute; left: 0; top: 0; width: 1080px; height: 1594px; perspective: 2200px; perspective-origin: 50% 40%; }
+  .doc { position: absolute; left: 50%; top: 620px; width: 500px; height: 680px; margin: -340px 0 0 -250px; transform-style: preserve-3d; transform: rotateX(8deg) rotateY(-16deg) rotateZ(-4deg); }
+  .sheet { position: absolute; inset: 0; background: #f3efe6; border-radius: 4px; padding: 50px 46px; color: #1b2430; box-shadow: inset 0 0 60px rgba(120,100,60,0.18), 0 40px 80px rgba(0,0,0,0.5); }
+  .sheet.under { transform: translateZ(-6px) rotate(4deg); background: #e4ddcf; }
+  .co { font-weight: 700; font-size: 17px; letter-spacing: 0.2em; text-transform: uppercase; color: #4a5462; }
+  h3 { margin-top: 40px; font-family: 'Playfair Display'; font-weight: 800; font-size: 48px; line-height: 1.05; color: #0f2a43; }
+  .ln { height: 12px; margin-top: 18px; background: #cfd4da; border-radius: 6px; }
+  .amt { margin-top: 28px; display: flex; align-items: center; gap: 16px; font-weight: 700; font-size: 24px; }
+  .amt span { padding: 8px 18px; border: 3px dashed #8a5d10; border-radius: 8px; font-family: 'Playfair Display'; font-size: 32px; color: #8a5d10; }
+  .hook { position: absolute; top: 1030px; left: 60px; right: 60px; text-align: center; font-family: 'Playfair Display'; font-weight: 800; font-size: 100px; line-height: 1.04; text-shadow: 0 8px 40px rgba(0,0,0,0.9); }
+  .hook em { font-style: normal; color: #e8b95a; }
+  .fact { position: absolute; top: 1330px; left: 50%; transform: translateX(-50%) rotate(-3deg); padding: 16px 30px; border: 6px solid #c9932c; color: #e8b95a; background: rgba(5,13,22,0.92); border-radius: 12px;
+          font-weight: 800; font-size: 34px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+  .cta { position: absolute; top: 1470px; width: 100%; text-align: center; font-weight: 700; font-size: 32px; letter-spacing: 0.08em; }
+  .cta b { color: #e8b95a; }
+</style>
+</head>
+<body>
+  <div class="l bg"></div><div class="l blinds"></div><div class="glow"></div><div class="l vig"></div>
+  <div class="stage"><div class="doc">
+    <div class="sheet under"></div>
+    <div class="sheet">
+      <div class="co">Empresa · RR. HH.</div>
+      <!-- EDITAR: tipo de documento del caso -->
+      <h3>Carta de despido</h3>
+      <div class="ln" style="width:92%"></div><div class="ln"></div><div class="ln" style="width:84%"></div><div class="ln" style="width:70%"></div>
+      <!-- EDITAR: el dato que se cuestiona -->
+      <div class="amt">Indemnización: <span>¿?</span></div>
+      <div class="ln" style="width:88%"></div><div class="ln" style="width:60%"></div>
+    </div>
+  </div></div>
+  <!-- EDITAR: pill -->
+  <div class="pill">Despido · <b>lo que te toca</b></div>
+  <!-- EDITAR: gancho = el del Frame 1; la clave en <em> -->
+  <div class="hook">¿Te toca <em>20 o 33 días</em> por año?</div>
+  <!-- EDITAR: un dato LITERAL de la guía -->
+  <div class="fact">33 días · tope 24 mensualidades</div>
+  <div class="cta">Consulta gratuita en <b>tuindemnizacionlaboral.com</b></div>
+</body>
+</html>

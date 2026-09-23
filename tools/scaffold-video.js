@@ -12,8 +12,9 @@
  *
  * Qué genera en videos/<slug>/ :
  *   - BRIEF.md, capture/extracted/{visible-text.txt,tokens.json}
- *   - frame.md + .hyperframes/caption-skin.html  (copiados de tools/video-assets/,
- *     preset blockframe remix navy/dorado; estética de marca TIL)
+ *   - frame.md, referencia-demo.html, cover.html (plantilla de portada) y assets/fonts/
+ *     (copiados de tools/video-assets/; estilo "documento 3D en despacho de noche", aprobado
+ *     el 23/09/2026 — el blockframe navy/dorado anterior queda en frame-blockframe.md)
  *   - STORYBOARD.md + SCRIPT.md  (listicle: gancho + N puntos + CTA de captación)
  *
  * Luego solo quedan los pasos "de máquina/agente" (ver README al final de la salida):
@@ -34,8 +35,8 @@ const ROOT = path.join(__dirname, '..');
 const GUIDES_DIR = path.join(ROOT, 'guias');
 const REF = path.join(ROOT, 'tools', 'video-assets'); // frame.md + caption-skin.html de marca
 const MAX_POINTS = 6;         // tope de puntos (frames de contenido) por vídeo
-const VOICE = '0077225a877e457db4572ccaf245910b'; // HeyGen "Narrator Mateo" (única voz ES)
-const SPEED = '1.12';         // ver memoria tiktok-video-pipeline: corrige las pausas de Mateo
+const VOICE = '3daec88b3c1a49b7a5e10a211426fc81'; // HeyGen "Fernando Sanz" (Mateo sonaba anglosajón)
+const SPEED = '1.5';          // ver memoria tiktok-video-pipeline
 const DOMAIN = 'tuindemnizacionlaboral.com';
 
 // Secciones de venta/cierre de las guías: NO son puntos de vídeo.
@@ -183,16 +184,15 @@ if (fs.existsSync(projDir)) { console.error(`Ya existe ${path.relative(ROOT, pro
 // ------------------------------ escribir proyecto ------------------------------
 const mk = (p) => fs.mkdirSync(path.join(projDir, p), { recursive: true });
 const wr = (p, c) => fs.writeFileSync(path.join(projDir, p), c);
-mk('capture/extracted'); mk('.hyperframes'); mk('compositions/frames');
+mk('capture/extracted'); mk('.hyperframes'); mk('compositions/frames'); mk('assets/fonts');
 
-// frame.md + caption-skin de la marca (tools/video-assets/)
-if (fs.existsSync(path.join(REF, 'frame.md'))) {
-  fs.copyFileSync(path.join(REF, 'frame.md'), path.join(projDir, 'frame.md'));
-  const skin = path.join(REF, 'caption-skin.html');
-  if (fs.existsSync(skin)) fs.copyFileSync(skin, path.join(projDir, '.hyperframes', 'caption-skin.html'));
-} else {
-  wr('FRAME_TODO.txt', 'Falta tools/video-assets/frame.md. Recrear con build-frame.mjs --preset blockframe (recolor navy/dorado).');
-}
+// estilo "documento 3D en despacho de noche" (tools/video-assets/): guía, referencia, portada, fuentes
+const cp = (from, to) => { if (fs.existsSync(from)) { fs.copyFileSync(from, path.join(projDir, to)); return true; } return false; };
+cp(path.join(REF, 'frame.md'), 'frame.md');
+cp(path.join(REF, 'caption-skin.html'), '.hyperframes/caption-skin.html');
+cp(path.join(REF, 'estilo', 'referencia-demo.html'), 'referencia-demo.html');
+cp(path.join(REF, 'estilo', 'portada-plantilla.html'), 'cover.html');
+for (const f of fs.readdirSync(path.join(REF, 'fonts'))) cp(path.join(REF, 'fonts', f), 'assets/fonts/' + f);
 
 // capture
 wr('capture/extracted/visible-text.txt', `${g.title}\n\n${stripHtml(g.body)}\n\nConsulta gratuita en ${DOMAIN}`);
@@ -241,9 +241,10 @@ music: "tense minimal underscore, seriedad contenida, sin voz"
 ---
 
 ## Video direction
-- **palette** (frame.md): fondo navy #0f2a43; dorado #c9932c = marca y dato clave; texto blanco. Número gigante Playfair Display, cuerpo Inter. Tarjetas blancas con borde navy 4px + sombra dura (neobrutalismo). Nunca inventar colores.
-- **motion**: eases power3, VO-paced (cada pieza entra en su cue hablado; nada en t=0). Reposo con jitter mínimo.
-- **ESCENARIO COMPARTIDO (puntos)**: número gigante arriba-izq + pill "CLAVE" · titular del punto en blanco (entra) · tarjeta-clave dorada que hace spring-pop debajo con el dato/consejo. Mismo molde, contenido distinto; transición push-slide UP entre puntos.
+- **estilo**: "Documento 3D en despacho de noche / motion comic" — LEER frame.md y referencia-demo.html (en este proyecto) antes de construir nada y reutilizar su CSS/patrones.
+- **palette** (frame.md): #050d16 + navy #0f2a43, dorado #c9932c/#e8b95a = marca y dato clave, texto #f4f7f9, papel #f3efe6. Playfair con lining-nums. Nunca inventar colores.
+- **motion**: eases power3/expo, VO-paced (cada pieza entra en su cue hablado). Reposo: documento girando despacio, persianas, polvo. Fotograma 0 nunca vacío.
+- **ESCENARIO COMPARTIDO (puntos)**: pill "Nº X" arriba · el documento del caso en 3D (${isDespido ? 'carta de despido' : 'parte de accidente / baja médica'}, genérico, con el dato en duda como «¿?») · 1–2 viñetas de motion comic con la situación del trabajador · caption narrativo con la frase de la VO y la clave en dorado · si el punto trae una cifra legal LITERAL de la guía, contador grande con su tope.
 - **negative list**: sin nav/cursores/chrome, sin bokeh ni degradados "AI", sin emojis. Sin cuantías/plazos inventados. Contenido en el 83% superior (UI de TikTok tapa el borde inferior).
 
 ## Frame 1 — Gancho
@@ -286,7 +287,7 @@ points.forEach((p, i) => {
   const fid = String(n).padStart(2, '0');
   sb += `
 ## Frame ${n} — Punto ${i + 1}: ${p.heading}
-- scene: Número "${i + 1}"; "${upper(p.heading)}"; tarjeta dorada con el consejo
+- scene: Nº ${i + 1} · viñeta de motion comic "${esc(p.heading)}" · caption
 - voiceover: "${esc(p.heading)}: ${esc(firstSentence(p.takeaway, 70))}"
 - duration: 6s
 - transition_in: push-slide UP
@@ -296,15 +297,14 @@ points.forEach((p, i) => {
 - beat: comprension
 - blueprint: kinetic-type-beats (Adapt)
 - focal: el titular "${upper(p.heading)}"
-- roles: número "${i + 1}" = supporting · titular = foreground · tarjeta dorada = foreground · fondo = background
+- roles: viñeta = foreground · caption = foreground · documento 3D o cifra = supporting · atmósfera = background
 - sfx: thock, pop
 - src: compositions/frames/${fid}-punto-${i + 1}.html
 
-Usa el ESCENARIO COMPARTIDO. Adapt de kinetic-type-beats.
-Scene 1 (0.0–1.3s): "${i + 1}" gigante dorado entra (scale-pop, thock) + pill "CLAVE".
-Scene 2 (1.3–3.4s): "${upper(p.heading)}" entra en blanco (centrado).
-Scene 3 (3.4–5.0s): tarjeta dorada spring-pop con el consejo: "${esc(firstSentence(p.takeaway, 60))}".
-Scene 4 (5.0–6.0s): hold quieto.
+Usa el ESCENARIO COMPARTIDO (frame.md + referencia-demo.html).
+Scene 1 (0.0–1.3s): pill "Nº ${i + 1}" + entra la viñeta de la situación (o el documento 3D cae y aterriza, thock) mientras se dice el titular.
+Scene 2 (1.3–4.4s): 1–2 golpes visuales de motion comic; caption palabra a palabra con la frase de la VO. Cifras solo si son literales de la guía.
+Scene 3 (4.4–6.0s): tag con "${esc(firstSentence(p.takeaway, 60))}"; hold.
 
 narrativeRole: Enseñar el punto ${i + 1} del tema.
 keyMessage: ${p.takeaway}
@@ -337,7 +337,7 @@ sb += `
 - sfx: soft-chime
 - src: compositions/frames/${String(cta).padStart(2, '0')}-cta.html
 
-Reproduce de titlecard-reveal: un movimiento contenido y hold. Navy/dorado de marca.
+Reproduce de titlecard-reveal en el estilo de frame.md: el documento vuelve y le cae el sello dorado («Consulta gratis»); wordmark con "Laboral" en dorado.
 Scene 1 (0.0–1.4s): icono de balanza + "Tu Indemnización Laboral" (Laboral en dorado) slide-up al centro.
 Scene 2 (1.4–2.8s): "${isDespido ? 'CALCULA tu indemnización · consulta GRATIS' : 'Primera consulta GRATIS'}" debajo; "GRATIS" en pill dorada.
 Scene 3 (2.8–4.0s): "${DOMAIN}" subrayado en dorado; hold. (Recordar en el caption: link en la bio.)
@@ -374,5 +374,5 @@ Luego, pasos de máquina/agente (desde ${rel}/):
   4. Construir frames: despachar 1 worker por frame (Claude) con _role.md + su packet.
   5. Ensamblar:       node "${SK}/assemble-index.mjs" --storyboard ./STORYBOARD.md --hyperframes .
                       node "${SK}/transitions.mjs" inject --storyboard ./STORYBOARD.md --hyperframes .
-  6. Check + render:  npx hyperframes check  &&  npx hyperframes render --skill=faceless-explainer --quality high --output renders/video.mp4
+  6. Check + render:  npx hyperframes@0.8.63 check  &&  npx hyperframes@0.8.63 render --skill=faceless-explainer --quality high --output renders/video.mp4
 `);

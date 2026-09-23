@@ -108,8 +108,11 @@ vertical por guía, **1 cada 3 días**. Vídeos *listicle/explainer* faceless ge
   de venta ("Así te lo resolvemos nosotros"). `--list` lista las guías.
 - **CTA de captación** (no "guía gratis"): consulta gratuita en `tuindemnizacionlaboral.com`; en guías
   de despido, la variante menciona la calculadora. **Nunca poner cuantías/plazos inventados en pantalla.**
-- Activos de marca en **`tools/video-assets/`** (`frame.md` + `caption-skin.html`, preset blockframe
-  recoloreado a navy `#0f2a43`/dorado `#c9932c`, Playfair Display + Inter) — se versionan. `PLAN-tiktok.md`
+- Estilo de vídeo en **`tools/video-assets/`** — se versiona: **"documento 3D en despacho de noche /
+  motion comic"** (aprobado el 23/09/2026). `frame.md` es la guía, `estilo/referencia-demo.html` la
+  referencia y `estilo/portada-plantilla.html` la portada; fuentes en `fonts/`. Navy `#0f2a43`/dorado
+  `#c9932c`, Playfair Display (con `lining-nums`) + Inter. El blockframe anterior está en
+  `frame-blockframe.md`. HyperFrames fijado a `@0.8.63` (la 0.8.64 falla con "Runtime checksum mismatch"). `PLAN-tiktok.md`
   ahí mismo tiene la estrategia. **`videos/` está en `.gitignore`** (proyectos grandes).
 - Calendario máquina en **`plan-tiktok/calendario-tiktok.txt`** (nº, fecha, slug, landing, caption+
   hashtags) + estado en `plan-tiktok/generados.txt`. Arranque 01/08/2026.
